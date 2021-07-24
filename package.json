@@ -4,6 +4,7 @@
   "description": "```sh\r git clone git@github.com:assadiandre/VaxFinder.git\r cd VaxFinder\r npm install\r node app\r ```",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "twilio": "^3.66.0"
