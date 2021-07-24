@@ -4,9 +4,15 @@
   "description": "```sh\r git clone git@github.com:assadiandre/VaxFinder.git\r cd VaxFinder\r npm install\r node app\r ```",
   "main": "app.js",
   "dependencies": {
+    "@esri/arcgis-rest-auth": "^3.2.1",
+    "@esri/arcgis-rest-request": "^3.2.1",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
+    "cross-fetch": "^3.1.4",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mongoose": "^5.13.3",
     "twilio": "^3.66.0"
   },
   "devDependencies": {},
