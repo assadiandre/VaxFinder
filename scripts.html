@@ -1,36 +1,54 @@
-<!DOCTYPE html>
 <html>
-    <head>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Track current location | Sample | ArcGIS API for JavaScript 4.20</title>
 
-    <link rel="stylesheet" href="https://js.arcgis.com/3.37/esri/css/esri.css">
     <style>
-        html, body, #map {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
+      html,
+      body,
+      #mapViewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
     </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.20/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.20/"></script>
 
-    <script src="https://js.arcgis.com/3.37/"></script>
     <script>
-        var map;
-        require(["esri/map"], function(Map) {
-            map = new Map("map", {
-                basemap: "topo",
-                center: [-122.45, 37.75],
-                zoom: 13
-            });
+      require(["esri/widgets/Track", "esri/views/MapView", "esri/Map"], function(Track, MapView, Map) {
+        var map = new Map({
+            basemap: "topo-vector",
+            center: [-122.45, 37.75],
+            zoom: 13 
         });
+
+        var view = new MapView({
+          map: map,
+          container: "mapViewDiv"
+        });
+
+        // Create an instance of the Track widget
+        // and add it to the view's UI
+        var track = new Track({
+          view: view
+        });
+        view.ui.add(track, "top-left");
+
+        // The sample will start tracking youhttp://www.esri.com/r location
+        // once the view becomes ready
+        view.when(function() {
+          track.start();
+        });
+      });
     </script>
+  </head>
 
-    <title></title>
-
-    <body class="claro">
-        <div id="map"></div>
-    </body>
-
-    </head>
+  <body>
+    <div id="mapViewDiv"></div>
+  </body>
 </html>
+
+
