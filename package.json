@@ -1,0 +1,17 @@
+{
+  "name": "vax-finder",
+  "version": "1.0.0",
+  "description": "```sh\r git clone git@github.com:assadiandre/VaxFinder.git\r cd VaxFinder\r npm install\r node app\r ```",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "twilio": "^3.66.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Yoo",
+  "license": "ISC"
+}
